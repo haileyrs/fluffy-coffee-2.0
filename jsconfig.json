@@ -15,5 +15,14 @@
       "dom.iterable",
       "scripthost"
     ]
+  },
+  "vueCompilerOptions": {
+    "extensions": [
+      ".vue"
+    ],
+    "target": 2.7,
+    "plugins": [
+      "@volar/vue-language-plugin-pug"
+    ]
   }
 }

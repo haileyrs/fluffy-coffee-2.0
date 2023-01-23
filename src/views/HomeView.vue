@@ -1,18 +1,30 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+div.home.section
+  .section-div
+    h1 Mocha
+    h2 I'm a norwegian elkhound/australian shepard mix 
+    h2.pb-2 from southeast Minnesota
+    router-link(:to="{ path: '/about' }")
+      v-btn(rounded, dark, color="#34b7a7") About Me
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
+	name: 'Home',
+  	components: {},
+  	data () {
+    return {
+    }
   }
-}
+};
 </script>
+
+<style>
+.home {
+  background: url("../assets/img/IMG_0346.jpg") top left;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+} 
+</style>
