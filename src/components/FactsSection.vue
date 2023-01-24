@@ -3,7 +3,7 @@ div.section-div.facts
   .section-title
     v-row
       h2 Facts
-  .content.pa-4
+  .content
     v-row.counters(max-width="100%")
       v-col.align-center(cols=6, lg=3)
         span.purecounter 50

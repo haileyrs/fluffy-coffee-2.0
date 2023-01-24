@@ -1,9 +1,9 @@
 <template lang="pug">
 .progress
   span.skill {{ title }}
-  v-spacer
+  //- v-spacer
   span.skill.val {{ val }} %
-  v-progress-linear(:value="val", color="#34b7a7")
+  v-progress-linear(:value="val", color="#34b7a7", height=12)
 </template>
 
 <script>

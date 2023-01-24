@@ -19,6 +19,10 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
+.section-div .content {
+  width: 100%;
+  padding: 0 75px 0 75px;
+}
 
 
 // Navbar
@@ -356,10 +360,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 26px;
   color: #555555;
 }
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
+// .about .content ul {
+//   list-style: none;
+//   padding: 0;
+// }
 .about .content v-list-item-content {
   padding-bottom: 10px;
 }
@@ -368,6 +372,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   background: none;
   border-radius: 0;
+  padding: 15px 15px
 }
 .skills .progress .skill {
   padding: 10px 0;
@@ -430,6 +435,10 @@ h1, h2, h3, h4, h5, h6 {
 // Portfolio
 .portfolio .portfolio-item {
   margin-bottom: 30px;
+}
+.portfolio .img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
 
