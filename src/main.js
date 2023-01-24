@@ -15,7 +15,6 @@ Vue.config.productionTip = false;
 Vue.component("hdr", hdr);
 Vue.component("ftr", ftr);
 
-
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 

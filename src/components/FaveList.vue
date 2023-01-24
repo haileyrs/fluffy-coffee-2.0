@@ -1,9 +1,9 @@
 <template lang="pug">
-div
-  v-row
-    h3.faves-title {{ title }}
-    v-timeline(dense, align-top)
-      v-timeline-item.faves-item(small, v-for="i in items", :key="i.subtitle")
+div.pb-4
+  h3.faves-title {{ title }}
+  v-timeline.timeline(dense)
+    v-timeline-item.faves-item(small, color="#34b7a7", v-for="i in items", :key="i.subtitle")
+      span
         h4 {{ i.subtitle }}
         p {{ i.definition }}
     

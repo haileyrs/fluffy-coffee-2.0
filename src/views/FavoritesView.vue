@@ -1,19 +1,18 @@
 <template lang="pug">
 div.favorites.section
-  div.section-div
-    div.section-title
+  .section-div
+    .section-title
       v-row
         h2 Mocha's Favorites
         p Spanning from activities to friends and snacks, this is a list of some of my favorite things.
-
+    
+    .content
       v-row
-        v-col
+        v-col(cols=12, md=6)
           FaveList(title="Friends", :items="friends")
-        v-col
-          FaveList(title="Snacks", :items="snacks")
-      v-row
-        v-col
           FaveList(title="Activities", :items="activities")
+        v-col(cols=12, md=6)
+          FaveList(title="Snacks", :items="snacks")
 </template>
 
 <script>

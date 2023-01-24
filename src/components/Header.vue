@@ -7,10 +7,10 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
-          <li><router-link to="/favorites">Favorites</router-link></li>
-          <li><router-link to="/portfolio">Portfolio</router-link></li>
-          <li><router-link to="/contact">Contact</router-link></li>
+          <li><router-link to="/about" active-class="active">About</router-link></li>
+          <li><router-link to="/favorites" active-class="active">Favorites</router-link></li>
+          <li><router-link to="/portfolio" active-class="active">Portfolio</router-link></li>
+          <li><router-link to="/contact" active-class="active">Contact</router-link></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>

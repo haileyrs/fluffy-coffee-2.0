@@ -17,3 +17,15 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+## TODO
+- [ ] header
+- [x] footer
+- [x] homepage
+- [ ] about
+- [x] portfolio
+- [x] favorites
+- [ ] contact form
+
