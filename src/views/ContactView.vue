@@ -8,15 +8,17 @@ div.contact.section
     .content
       v-row.px-5
         v-col(cols=12, md=4)
-          div.mx-5.info
+          div.mx-5.other-info
             v-row.location(align-content="center")
-              v-icon mdi-google-maps
-              h4 Location:
-              p St. Paul, MN
+              v-col
+                v-icon mdi-google-maps
+                h4 Location:
+                p St. Paul, MN
             v-row.email
-              v-icon mdi-email 
-              h4 Email:
-              p haileyscheevel@gmail.com
+              v-col
+                v-icon mdi-email 
+                h4 Email:
+                p haileyscheevel@gmail.com
               
         v-col(cols=12, md=7)
           form.pl-5(action="forms/contact.php", method="post", role="form", class="email-form")

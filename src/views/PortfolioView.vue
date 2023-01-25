@@ -5,7 +5,6 @@ div.portfolio.section
       v-row
         h2 Portfolio
         p These are only a few of my extensive folder full of beautiful self portraits. Enjoy!
-
     .content
       .row
         .col-lg-4.col-md-12.mb-4.mb-lg-0 
@@ -30,6 +29,6 @@ div.portfolio.section
 
 <script>
 export default {
-  name: 'PortfolioView',
+  name: 'PortfolioView'
 };
 </script>

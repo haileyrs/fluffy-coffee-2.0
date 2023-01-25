@@ -9,14 +9,8 @@ div.home.section
 </template>
 
 <script>
-
 export default {
-	name: 'Home',
-  	components: {},
-  	data () {
-    return {
-    }
-  }
+	name: 'Home'
 };
 </script>
 

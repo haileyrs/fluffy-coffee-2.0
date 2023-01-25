@@ -24,7 +24,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] header
 - [x] footer
 - [x] homepage
-- [ ] about
+- [x] about
 - [x] portfolio
 - [x] favorites
 - [ ] contact form

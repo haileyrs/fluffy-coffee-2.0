@@ -6,11 +6,9 @@ div.pb-4
       span
         h4 {{ i.subtitle }}
         p {{ i.definition }}
-    
 </template>
 
 <script>
-
 export default {
   name: 'FaveList',
   props: {
@@ -21,10 +19,6 @@ export default {
     items: {
       required: true,
       type: Array
-    }
-  },
-  data () {
-    return {
     }
   }
 };

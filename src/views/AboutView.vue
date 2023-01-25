@@ -16,10 +16,6 @@ export default {
     About,
     Facts,
     Skills
-  },
-  data () {
-    return {
-    }
   }
 };
 </script>
