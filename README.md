@@ -21,7 +21,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ## TODO
-- [ ] header
+- [x] header
 - [x] footer
 - [x] homepage
 - [x] about

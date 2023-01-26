@@ -17,10 +17,6 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
-.section-div .content {
-  width: 100%;
-  padding: 0 75px 50px 75px;
-}
 
 
 // Navbar
@@ -32,7 +28,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header .logo {
   font-size: 32px;
-  margin: 0;
   padding: 0;
   line-height: 1;
   font-weight: 400;
@@ -40,24 +35,20 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   color: #16697A;
 }
-.header-social-links {
-  padding: 0 15px;
-  // float: right;
-  // text-align: end;
-}
-// .header-social-links .v-icon {
+// .header-social-links {
 //   color: #6f6f6f;
-//   padding-left: 6px;
+//   padding: 10px 10px!important;
 //   display: inline-block;
 //   line-height: 0px;
-//   size: 24px;
+//   font-size: 16px;
 // }
-.header-social-links .v-icon:hover {
-  color: #34b7a7;
+// .header-social-links .v-icon:hover {
+//   color: #34b7a7;
+// }
+.navbar {
+  padding: 0;
+  width: 100%;
 }
-// .navbar {
-//   padding: 0;
-// }
 .navbar ul {
   margin: 0;
   padding: 0;
@@ -81,11 +72,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   position: relative;
 }
-// .navbar a i, .navbar a:focus i {
-//   font-size: 12px;
-//   line-height: 0;
-//   margin-left: 5px;
-// }
 .navbar .navbar-text a:before {
   content: "";
   position: absolute;
@@ -119,6 +105,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.section-div .content {
+  width: 100%;
+  padding: 0 75px 50px 75px;
 }
 .section-title {
   text-align: center;

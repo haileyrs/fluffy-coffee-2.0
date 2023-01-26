@@ -6,9 +6,9 @@ div.section-div.about
       p These are some interesting facts about me!
   .content
     v-row
-      v-col.pb-(cols=12, md=4)
+      v-col.pb-(cols=12, lg=4)
         v-img(:src="require('../assets/img/IMG_0240.jpg')", aspect-ratio="1")
-      v-col(cols=12, md=8)
+      v-col(cols=12, lg=8)
         h3 Dog & Full Time Best Friend
         p.fst-italic.mb-0 Emotional Support Animal (Not Certified)
         v-row
