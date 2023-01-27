@@ -4,7 +4,7 @@ div.section-div.about
     v-row
       h2 About
       p These are some interesting facts about me!
-  .content
+  .container
     v-row
       v-col.pb-(cols=12, lg=4)
         v-img(:src="require('../assets/img/IMG_0240.jpg')", aspect-ratio="1")

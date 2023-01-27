@@ -3,7 +3,7 @@ div.section-div.skills
   .section-title
     v-row
       h2 Skills
-  .content
+  .container
     v-row
       v-col(cols=12, lg=6)
         SkillsBar(title="Zoomies", :val='100')

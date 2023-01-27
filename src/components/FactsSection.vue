@@ -3,7 +3,7 @@ div.section-div.facts
   .section-title
     v-row
       h2 Facts
-  .content
+  .container.mb-5
     v-row.counters.d-flex(max-width="100%")
       v-col(cols=12, md=3, sm=6)
         div.counter

@@ -49,6 +49,11 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   width: 100%;
 }
+@media (min-width: 768px) {
+  .navbar .navbar-nav {
+    padding-right: 125px;
+  }
+}
 .navbar ul {
   margin: 0;
   padding: 0;
@@ -106,10 +111,6 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   flex-direction: column;
 }
-.section-div .content {
-  width: 100%;
-  padding: 0 75px 50px 75px;
-}
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -140,13 +141,9 @@ h1, h2, h3, h4, h5, h6 {
 
 // Home
 .home .section-div {
-  padding-top: 250px;
+  padding-top: 17%;
   position: relative;
-}
-@media (max-width: 992px) {
-  .home .section-div{
-    padding-top: 200px;
-  }
+  text-align: center;
 }
 .home h1 {
   margin: 0;
@@ -166,6 +163,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (max-width: 992px) {
+  .home .section-div {
+    padding-top: 150px;
+  }
   .home:before {
     content: "";
     background: rgba(255, 255, 255, 0.8);
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 36px;
   }
   .home h2 {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     color: #34b7a7;
   }
@@ -188,15 +188,15 @@ h1, h2, h3, h4, h5, h6 {
 
 
 // About
-.about .content h3 {
+.about .container h3 {
   font-weight: 700;
   font-size: 26px;
   color: #555555;
 }
-.about .content .v-list-item__content {
+.about .container .v-list-item__content {
   padding: 5px 0;
 }
-.about .content .v-list-item .v-list-item__title {
+.about .container .v-list-item .v-list-item__title {
   color: #34b7a7;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -264,8 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 
 // Contact
 .contact .other-info {
-  width: 100%;
-  padding-left: 5rem;
+  width: 75%;
 }
 .contact .other-info i {
   font-size: 20px;
@@ -296,10 +295,6 @@ h1, h2, h3, h4, h5, h6 {
 .contact .other-info .email:hover i, .contact .other-info .location:hover i {
   background: #34b7a7;
   color: #fff;
-}
-.contact .php-email-form {
-  width: 100%;
-  background: #fff;
 }
 
 

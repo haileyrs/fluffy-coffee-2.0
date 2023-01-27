@@ -9,6 +9,7 @@ import ftr from './components/Footer';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import vuetify from './plugins/vuetify'
+import Vuelidate from 'vuelidate';
 
 Vue.config.productionTip = false;
 
@@ -17,6 +18,8 @@ Vue.component("ftr", ftr);
 
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(Vuelidate);
+
 
 new Vue({
     router,

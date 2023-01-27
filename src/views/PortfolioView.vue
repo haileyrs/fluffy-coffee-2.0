@@ -5,7 +5,7 @@ div.portfolio.section
       v-row
         h2 Portfolio
         p These are only a few of my extensive folder full of beautiful self portraits. Enjoy!
-    .content
+    .container.mb-5
       .row
         .col-lg-4.col-md-12.mb-4.mb-lg-0 
           img(src="../assets/img/IMG_0091.jpg")

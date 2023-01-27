@@ -2,7 +2,7 @@
 <header id="header" class="fixed-top">
   <div class="container-fluid d-flex">
     <b-navbar toggleable="md">
-      <router-link to="/"><h1 class="logo me-auto me-lg-0">Mocha</h1></router-link>
+      <router-link to="/"><h1 class="logo">Mocha</h1></router-link>
       
       <b-navbar-toggle class="navbar-toggler" target="nav-text-collapse"></b-navbar-toggle>
       <b-collapse id="nav-text-collapse" is-nav>

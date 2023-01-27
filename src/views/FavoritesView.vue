@@ -6,7 +6,7 @@ div.favorites.section
         h2 Mocha's Favorites
         p Spanning from activities to friends and snacks, this is a list of some of my favorite things.
     
-    .content
+    .container.mb-5
       v-row
         v-col(cols=12, md=6)
           FaveList(title="Friends", :items="friends")

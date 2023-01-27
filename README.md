@@ -28,4 +28,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] portfolio
 - [x] favorites
 - [ ] contact form
+- [x] padding and margins when page is < sm
 

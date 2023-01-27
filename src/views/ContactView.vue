@@ -2,13 +2,14 @@
 div.contact.section
   .section-div
     .section-title
-      h2 Contact
-      p I don't really have an email or anything like that - as I am a dog, but my mom does! If you like this site, you can reach out to her here.
+      v-row
+        h2 Contact
+        p I don't really have an email or anything like that - as I am a dog, but my mom does! If you like this site, you can reach out to her here.
     
-    .content
-      v-row.px-5
-        v-col(cols=12, md=4)
-          div.mx-5.other-info
+    .container.mb-5
+      v-row
+        v-col(cols=12, lg=4)
+          div.other-info
             v-row.location(align-content="center")
               v-col
                 v-icon mdi-google-maps
@@ -20,32 +21,114 @@ div.contact.section
                 h4 Email:
                 p haileyscheevel@gmail.com
               
-        v-col(cols=12, md=7)
-          form.pl-5(action="forms/contact.php", method="post", role="form", class="email-form")
-            div.pl-5(class="row")
-              div(class="col-md-6 form-group")
-                input(type="text", name="name", class="form-control", id="name", placeholder="Your Name", required)
-              div(class="col-md-6 form-group mt-3 mt-md-0")
-                input(type="email", class="form-control", name="email", id="email", placeholder="Your Email", required)
-              div(class="form-group mt-3")
-                input(type="text", class="form-control", name="subject", id="subject", placeholder="Subject", required)
-        
-              div(class="form-group mt-3")
-                textarea(class="form-control", name="message", rows="5", placeholder="Message", required)
-              
-              div(class="text-center")
-                v-btn(type="submit", rounded, dark, color="#34b7a7") Send Message
-
-        v-col(cols=0, md=1)
-
-
+        v-col(cols=12, lg=7)
+          v-form.contact-form(v-model="valid")
+            v-row
+              v-col(cols=12, md=6)
+                v-text-field(
+                  v-model="name", 
+                  label="Name", 
+                  :error-messages="nameErrors",
+                  @input="$v.name.$touch()"
+                  color="#34b7a7",
+                  outlined, 
+                  dense)
+              v-col(cols=12, md=6)
+                v-text-field(
+                  v-model="email", 
+                  label="Email", 
+                  :error-messages="emailErrors",
+                  @input="$v.email.$touch()", 
+                  color="#34b7a7", 
+                  outlined, 
+                  dense)
+            v-row 
+              v-col(cols=12)
+                v-text-field(
+                  v-model="subject", 
+                  label="Subject",
+                  :error-messages="subjectErrors",
+                  @input="$v.subject.$touch()" 
+                  color="#34b7a7", 
+                  outlined, 
+                  dense)
+            v-row
+              v-col(cols=12)
+                v-textarea(
+                  v-model="message", 
+                  label="Message", 
+                  :error-messages="messageErrors", 
+                  @input="$v.message.$touch()", 
+                  color="#34b7a7", 
+                  outlined, 
+                  dense)
+            .text-center
+                v-btn(@click="submit", rounded, dark, color="#34b7a7") Send Message
 </template>
 
 <script>
+import emailjs from '@emailjs/browser';
+import { required, email } from 'vuelidate/lib/validators'
 
 export default {
-    name: 'ContactView',
-    
+  name: 'ContactView',
+  validations() {
+    return {
+      name: { required },
+      email: { required, email },
+      subject: { required },
+      message: { required }
+    }
+  },
+  data() {
+    return {
+      email: "",
+      message: "",
+      name: "",
+      subject: "",
+      valid: false
+    }
+  },
+  computed: {
+    nameErrors() {
+      const errors = []
+      if (!this.$v.name.$dirty) return errors
+      !this.$v.name.required && errors.push('Name is required')
+      return errors
+    },
+    emailErrors() {
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.required && errors.push('Email is required')
+      !this.$v.email.email && errors.push('Must be valid email format')
+      return errors
+    },
+    subjectErrors() {
+      const errors = []
+      if (!this.$v.subject.$dirty) return errors
+      !this.$v.subject.required && errors.push('Subject line is required')
+      return errors
+    },
+    messageErrors() {
+      const errors = []
+      if (!this.$v.message.$dirty) return errors
+      !this.$v.message.required && errors.push('Message is required')
+      return errors
+    }
+  },
+  methods: {
+    submit() {
+      this.$v.$touch()
+      if (!this.$v.$invalid) {
+        // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.$refs.form, 'YOUR_PUBLIC_KEY')
+        // .then((result) => {
+        //     console.log('SUCCESS!', result.text);
+        // }, (error) => {
+        //     console.log('FAILED...', error.text);
+        // });
+      }
+    }
+  }
 };
 </script>
 

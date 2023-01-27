@@ -2,8 +2,7 @@
 div.home.section
   .section-div
     h1 Mocha
-    h2 I'm a norwegian elkhound/australian shepard mix 
-    h2.pb-2 from southeast Minnesota
+    h2.pb-2 I'm a norwegian elkhound/australian shepard mix from southeast Minnesota
     router-link(:to="{ path: '/about' }")
       v-btn(rounded, dark, color="#34b7a7") About Me
 </template>
