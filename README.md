@@ -27,6 +27,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] about
 - [x] portfolio
 - [x] favorites
-- [ ] contact form
+- [x] contact form
 - [x] padding and margins when page is < sm
+
+### future 
+- [] animations
+- [] tests
 

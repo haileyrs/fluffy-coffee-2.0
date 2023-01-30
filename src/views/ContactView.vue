@@ -14,19 +14,24 @@ div.contact.section
               v-col
                 v-icon mdi-google-maps
                 h4 Location:
-                p St. Paul, MN
+                p Saint Paul, MN
             v-row.email
               v-col
                 v-icon mdi-email 
                 h4 Email:
                 p haileyscheevel@gmail.com
+            v-row
+              v-col.mt-6
+                v-alert(v-if="error", type="warning", color="#34b7a7", dismissable, @click="error = false") {{ errorMessage }}
+                v-alert(v-if="success", type="success", color="#34b7a7", dismissable, @click="success = false") Sent!
               
         v-col(cols=12, lg=7)
-          v-form.contact-form(v-model="valid")
+          form.contact-form(ref="form")
             v-row
               v-col(cols=12, md=6)
                 v-text-field(
                   v-model="name", 
+                  name="from_name",
                   label="Name", 
                   :error-messages="nameErrors",
                   @input="$v.name.$touch()"
@@ -35,7 +40,8 @@ div.contact.section
                   dense)
               v-col(cols=12, md=6)
                 v-text-field(
-                  v-model="email", 
+                  v-model="email",
+                  name="from_email",
                   label="Email", 
                   :error-messages="emailErrors",
                   @input="$v.email.$touch()", 
@@ -45,7 +51,8 @@ div.contact.section
             v-row 
               v-col(cols=12)
                 v-text-field(
-                  v-model="subject", 
+                  v-model="subject",
+                  name="subject",
                   label="Subject",
                   :error-messages="subjectErrors",
                   @input="$v.subject.$touch()" 
@@ -55,7 +62,8 @@ div.contact.section
             v-row
               v-col(cols=12)
                 v-textarea(
-                  v-model="message", 
+                  v-model="message",
+                  name="message", 
                   label="Message", 
                   :error-messages="messageErrors", 
                   @input="$v.message.$touch()", 
@@ -63,7 +71,8 @@ div.contact.section
                   outlined, 
                   dense)
             .text-center
-                v-btn(@click="submit", rounded, dark, color="#34b7a7") Send Message
+              v-btn(@click="submit", rounded, dark, color="#34b7a7") Send Message
+              
 </template>
 
 <script>
@@ -82,6 +91,9 @@ export default {
   },
   data() {
     return {
+      error: false,
+      errorMessage: "",
+      success: false,
       email: "",
       message: "",
       name: "",
@@ -119,13 +131,18 @@ export default {
   methods: {
     submit() {
       this.$v.$touch()
-      if (!this.$v.$invalid) {
-        // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.$refs.form, 'YOUR_PUBLIC_KEY')
-        // .then((result) => {
-        //     console.log('SUCCESS!', result.text);
-        // }, (error) => {
-        //     console.log('FAILED...', error.text);
-        // });
+      this.error = false;
+      if (this.$v.$invalid) {
+        this.error = true;
+        this.errorMessage = 'Please make sure all fields are complete.'
+      } else if (!this.$v.$invalid) {
+        emailjs.sendForm('service_mocha_site02', 'template_ihzwzyr', this.$refs.form, '5VTvKe28nynViqK1J')
+        .then((result) => {
+            this.success = true;
+            this.$refs.form.reset();
+        }, (error) => {
+            this.errorMessage = 'There was an error processing your request.';
+        });
       }
     }
   }

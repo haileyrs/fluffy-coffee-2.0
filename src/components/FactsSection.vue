@@ -29,9 +29,15 @@ div.section-div.facts
 <script>
 export default {
   name: 'Facts',
-  data () {
-    return {
-      support: 59130
+  computed: {
+    support() {
+      const today = new Date()
+      const date1 = new Date("04/01/2016")
+
+      const timeDiff = today.getTime() - date1.getTime()
+      const hours = timeDiff / (1000*3600)
+
+      return Math.round(hours)
     }
   }
 };
