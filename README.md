@@ -31,6 +31,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] padding and margins when page is < sm
 
 ### future 
-- [] animations
-- [] tests
+- [ ] animations
+- [ ] tests
 

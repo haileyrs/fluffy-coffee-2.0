@@ -71,7 +71,7 @@ div.contact.section
                   outlined, 
                   dense)
             .text-center
-              v-btn(@click="submit", rounded, dark, color="#34b7a7") Send Message
+              v-btn(@click="submit", :loading="loading", rounded, dark, color="#34b7a7") Send Message
               
 </template>
 
@@ -91,13 +91,14 @@ export default {
   },
   data() {
     return {
-      error: false,
       errorMessage: "",
-      success: false,
       email: "",
       message: "",
       name: "",
       subject: "",
+      error: false,
+      loading: false,
+      success: false,
       valid: false
     }
   },
@@ -128,8 +129,14 @@ export default {
       return errors
     }
   },
+  watch: {
+    error() {
+      this.error ? this.success = false : ''
+    }
+  },
   methods: {
     submit() {
+      this.loading = true;
       this.$v.$touch()
       this.error = false;
       if (this.$v.$invalid) {
@@ -139,11 +146,16 @@ export default {
         emailjs.sendForm('service_mocha_site02', 'template_ihzwzyr', this.$refs.form, '5VTvKe28nynViqK1J')
         .then((result) => {
             this.success = true;
-            this.$refs.form.reset();
+            this.$v.$reset();
+            this.email = "";
+            this.message = "";
+            this.name = "";
+            this.subject = "";
         }, (error) => {
             this.errorMessage = 'There was an error processing your request.';
         });
       }
+      this.loading = false;
     }
   }
 };
