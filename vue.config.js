@@ -19,5 +19,5 @@ module.exports = {
       'vuetify'
     ],
     
-    publicPath: process.eventNames.NODE_ENV === "production" ? "/fluffy-coffee-2.0/" : "/"
+    publicPath: process.env.NODE_ENV === "production" ? "/fluffy-coffee-2.0/" : "/"
 };
