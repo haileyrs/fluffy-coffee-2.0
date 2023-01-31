@@ -17,5 +17,7 @@ module.exports = {
 
     transpileDependencies: [
       'vuetify'
-    ]
+    ],
+    
+    publicPath: process.eventNames.NODE_ENV === "production" ? "/fluffy-coffee-2.0/" : "/"
 };
